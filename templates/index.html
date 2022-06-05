@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+
+    <head>
+        <!-- Metadados -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Título da página (aparece na aba) -->
+        <title>Titanic </title>
+    </head>
+
+    <body>  
+        <style>
+            /* Todos os elementos da página */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Elementos com o ID "titulo" */
+#titulo {
+    font-family: sans-serif;
+    color: #380B61;
+    margin-left: 7%;
+} 
+
+/* Elementos com o ID "subtitulo" */
+#subtitulo {
+    font-family: sans-serif;
+    color: #380B61;
+    margin-left: 10%;
+} 
+
+#check{
+    display: inline-block;
+}
+
+/* Elementos de tag <fieldset>*/
+fieldset {
+    border: 0;
+}
+
+/* Elemento de tag <body> */
+body{
+    background-color: #a3c9eb;
+    font-family: sans-serif;
+    font-size: 1em;
+    color: #59429d;
+    margin-left: 36%;
+    margin-top: 2%;
+    justify-content: center;
+}
+
+/* Elementos de tags <body>, <input>, <Select>, <textarea> e <button> */
+input, select, textarea, button {
+    font-family: sans-serif;
+    font-size: 1em;
+    color: #59429d;
+    border-radius: 5px;
+}
+
+/* Elementos de classe "grupo" nos estados das pseudoclasses "before" e "after" */
+.grupo:before, .grupo:after {
+    display: table;
+}
+
+/* Elementos de classe "grupo" no estado da pseudoclasse "after" */
+.grupo:after {
+    clear: both;
+}
+
+/* Elementos de classe "campo" */
+.campo {
+    margin-bottom: 1em;
+}
+
+/* Elementos de classe "campo" de tag <label> */
+.campo label {
+    margin-bottom: 0.2em;
+    color: #59429d;
+    display: block;
+}
+
+/* Elementos de classe "campo" ou "grupo" de tag <fieldset> */
+fieldset.grupo .campo {
+    float:  left;
+    margin-right: 1em;
+}
+
+/* Elementos de classe "campo" das tags <input> com atributo text e email, da tag <select> e da tag <textarea>*/
+.campo input[type="text"], .campo input[type="email"], .campo select, .campo textarea {
+    padding: 0.2em;
+    border: 1px solid #59429d;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    display: block;
+}
+
+/* Elementos de classe "campo" de tag <select> e <option>*/
+.campo select option {
+    padding-right: 1em;
+}
+
+/* Elemento de classe "campo" com tag <input>, <select> e <textarea> tocas com estado da pseudoclasse "focus"*/
+.campo input:focus, .campo select:focus, .campo textarea:focus {
+    background: #E0E0F8;
+}
+
+/* Elemento de classe "botao" */
+.botao {
+    font-size: 1.2em;
+    background: #59429d;
+    border: 0;
+    margin-bottom: 1em;
+    color: #ffffff;
+    padding: 0.2em 0.6em;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+/* Elemento de classe "botao" com o estado da pseudoclasse "hover" */
+.botao:hover {
+    background: #CCBBFF;
+    box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2);
+    text-shadow: none;
+}
+
+/* Elementos de classe botão e de tag <select> */
+.botao, select{
+    cursor: pointer;
+}
+        </style>
+        <!-- Cabeçalho com título e subtítulo (ambos com css de id "titulo") -->
+        <div>
+            <h1 id="titulo">Descubra se você </h1>
+            <h1 id="titulo">sobreviveria no Titanic</h1>
+            <p id="subtitulo">Complete com suas informações</p>
+            <br>
+        </div>
+
+        <!-- Início do formulário -->
+        <form action="predicao" method="POST">
+
+
+            <!-- Coluna do Gênero (Sex) -->
+            <div class="campo">
+                <label><strong>Qual o seu sexo?</strong></label>
+                <label>
+                    <input type="radio" name="sex" value="masculino">Masculino
+                </label>
+                <label>
+                    <input type="radio" name="sex" value="feminino">Feminino
+                </label>
+            </div>
+
+            <!-- Coluna da Classe comprada (pclass)  -->
+            <div class="campo">
+                <label><strong>Marque em qual classe você esta embarcando</strong></label>
+                <label>
+                    <input type="radio" name="pclass" value="primeiraclasse"required> Primeira Classe
+                </label>
+                <label>
+                    <input type="radio" name="pclass" value="segundaclasse"required> Segunda Classe
+                </label>
+                <label>
+                    <input type="radio" name="pclass" value="terceiraclasse"required> Terceira Classe
+                </label>
+            </div>
+
+            <!-- Coluna da Idade (Age)  -->
+            <div class="campo">
+                <label for="age"><strong>Digite a sua idade:</strong></label>
+                <input type="number" name="age" min="1" max="120" maxlength="2" required>
+            </div>
+ 
+            <!-- Coluna de irmãos e conjuges (sibsp)  -->
+            <div class="campo">
+                <label for="sibsp"><strong>Digite a quantidade de irmãos e conjugê a bordo:</strong></label>
+                <input type="number" name="sibsp" min="1" max="10" maxlength="2" required>
+            </div>
+
+            <!-- Coluna de Pais e Filhos (parch)  -->
+            <div class="campo">
+                <label for="parch"><strong>Digite a quantidade de pais e filhos a bordo:</strong></label>
+                <input type="number" name="parch" min="1" max="10" maxlength="2" required>
+            </div>
+
+          <!-- Coluna de quantidade de libras pagas (fare)  -->
+            <div class="campo">
+                <label for="fare"><strong>Digite qual foi a tarifa paga (Em Libras):</strong></label>
+                <input type="number" name="parch" min="1" max="100" maxlength="3" required>
+            </div>
+
+
+            <!-- Botão para enviar o formulário -->
+            <button class="botao" type="submit" onsubmit="">Enviar</button>            
+
+        </form>
+
+    </body>
+
+</html>
