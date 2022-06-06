@@ -12,13 +12,12 @@ def index():
 
 @app.route('/predicao', methods=['POST'])
 def predicao():
-  data1 = request.form['sex']
-  data2 = request.form['pclass']
-  data3 = request.form['age']
-  data4 = request.form['sibsp']
-  data5 = request.form['parch']
-  arr = np.array([[data1, data2, data3, data4, data5]])
-  pred = model.predict(arr) 
+  sex = int(request.form['sex'])
+  pclass = int(request.form['pclass'])
+  age = int(request.form['age'])
+  sibsp = int(request.form['sibsp'])
+  parch = float(request.form['parch'])
+  predicao = model.predict([[sex, pclass, age, sibsp, parch]])
   return render_template('resposta.html', predicao=predicao[0])
 
 app.run(debug=True)

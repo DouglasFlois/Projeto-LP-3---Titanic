@@ -150,27 +150,21 @@ fieldset.grupo .campo {
             <!-- Coluna do Gênero (Sex) -->
             <div class="campo">
                 <label><strong>Qual o seu sexo?</strong></label>
-                <label>
-                    <input type="radio" name="sex" value="masculino">Masculino
-                </label>
-                <label>
-                    <input type="radio" name="sex" value="feminino">Feminino
-                </label>
+                    <select id="sex" name="sex">
+                        <option value="0"> Masculino</option>
+                        <option value="1"> Feminino</option>
+                    </select>
             </div>
 
             <!-- Coluna da Classe comprada (pclass)  -->
             <div class="campo">
                 <label><strong>Marque em qual classe você esta embarcando</strong></label>
-                <label>
-                    <input type="radio" name="pclass" value="primeiraclasse"required> Primeira Classe
-                </label>
-                <label>
-                    <input type="radio" name="pclass" value="segundaclasse"required> Segunda Classe
-                </label>
-                <label>
-                    <input type="radio" name="pclass" value="terceiraclasse"required> Terceira Classe
-                </label>
-            </div>
+                        <select id="pclass" name="pclass">
+                            <option value="1"> Primeira Classe</option>
+                            <option value="2"> Segunda Classe</option>
+                            <option value="2"> Terceira Classe</option>
+                        </select>
+                </div>
 
             <!-- Coluna da Idade (Age)  -->
             <div class="campo">
