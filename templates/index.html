@@ -155,7 +155,7 @@ fieldset.grupo .campo {
                         <option value="1"> Feminino</option>
                     </select>
             </div>
-
+            
             <!-- Coluna da Classe comprada (pclass)  -->
             <div class="campo">
                 <label><strong>Marque em qual classe você esta embarcando</strong></label>
@@ -175,19 +175,19 @@ fieldset.grupo .campo {
             <!-- Coluna de irmãos e conjuges (sibsp)  -->
             <div class="campo">
                 <label for="sibsp"><strong>Digite a quantidade de irmãos e conjugê a bordo:</strong></label>
-                <input type="number" name="sibsp" min="1" max="10" maxlength="2" required>
+                <input type="number" name="sibsp" min="0" max="10" maxlength="2" required>
             </div>
 
             <!-- Coluna de Pais e Filhos (parch)  -->
             <div class="campo">
                 <label for="parch"><strong>Digite a quantidade de pais e filhos a bordo:</strong></label>
-                <input type="number" name="parch" min="1" max="10" maxlength="2" required>
+                <input type="number" name="parch" min="0" max="10" maxlength="2" required>
             </div>
 
           <!-- Coluna de quantidade de libras pagas (fare)  -->
             <div class="campo">
                 <label for="fare"><strong>Digite qual foi a tarifa paga (Em Libras):</strong></label>
-                <input type="number" name="parch" min="1" max="100" maxlength="3" required>
+                <input type="number" name="fare" min="1" max="100" maxlength="3" step=".01" required>
             </div>
 
 

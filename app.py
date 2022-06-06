@@ -17,7 +17,8 @@ def predicao():
   age = int(request.form['age'])
   sibsp = int(request.form['sibsp'])
   parch = float(request.form['parch'])
-  predicao = model.predict([[sex, pclass, age, sibsp, parch]])
+  fare = float(request.form['fare'])
+  predicao = model.predict([[sex, pclass, age, sibsp, parch,fare]])
   return render_template('resposta.html', predicao=predicao[0])
 
 app.run(debug=True)
